@@ -1,3 +1,7 @@
+# Generated files
+generated
+domain-builds
+
 # Logs
 logs
 *.log

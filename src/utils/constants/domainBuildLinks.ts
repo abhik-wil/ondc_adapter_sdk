@@ -1,9 +1,11 @@
-import {DOMAIN_CODE} from './domain';
+import {DOMAIN_CODE} from './domainCodes';
 
-export const DOMAIN_CODEToDomainMap: {[key in DOMAIN_CODE]: string} = {
+// TODO: Place Links to respective build.yaml files
+export const DOMAIN_BUILD_LINKS: {[key in DOMAIN_CODE]: string} = {
   [DOMAIN_CODE.NIC2004_52110]: 'Retail',
   [DOMAIN_CODE.NIC2004_60232]: 'Logistics',
-  [DOMAIN_CODE.ONDC_RET10]: 'Grocery',
+  [DOMAIN_CODE.ONDC_RET10]:
+    'https://raw.githubusercontent.com/ONDC-Official/ONDC-RET-Specifications/release-2.0.2/api/build/build.yaml',
   [DOMAIN_CODE.ONDC_RET11]: 'F&B',
   [DOMAIN_CODE.ONDC_RET12]: 'Fashion',
   [DOMAIN_CODE.ONDC_RET13]: 'BPC',
@@ -31,6 +33,7 @@ export const DOMAIN_CODEToDomainMap: {[key in DOMAIN_CODE]: string} = {
   [DOMAIN_CODE.ONDC_AGR11]: 'Agri Outputs',
   [DOMAIN_CODE.ONDC_AGR12]: 'Agri Services',
   [DOMAIN_CODE.ONDC_SRV10]: 'Skilled Services - Appliance Repair Services',
-  [DOMAIN_CODE.ONDC_SRV11]: 'Skilled Services - Infra Services',
+  [DOMAIN_CODE.ONDC_SRV11]:
+    'https://raw.githubusercontent.com/ONDC-Official/ONDC-SRV-Specifications/draft-services/api/build/build.yaml',
   [DOMAIN_CODE.ONDC_SRV12]: 'Skilled Services - Personal Care Services',
 };
