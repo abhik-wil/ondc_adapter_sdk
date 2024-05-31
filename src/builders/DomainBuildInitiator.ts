@@ -5,22 +5,33 @@ import {
   saveToLocalFile,
 } from '@/utils';
 import path from 'path';
+import fs from 'fs';
 import {parse} from 'yaml';
+import SwaggerParser from '@apidevtools/swagger-parser';
 
 export class DomainBuildInitiator {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private build: any;
   private intialized = false;
   constructor(private domain: DOMAIN_CODE) {}
-  async init() {
-    const file = await loadYamlFile(DOMAIN_BUILD_LINKS[this.domain]);
-    const parsedBuildYaml = parse(file);
-    this.build = parsedBuildYaml;
+  public async init(refresh = false) {
     const buildPath = path.resolve(
       './src/domain-builds',
-      `${this.domain}.json`
+      `${this.domain.replace(':', '_')}.json`
     );
-    saveToLocalFile(JSON.stringify(parsedBuildYaml), buildPath);
+    if (!refresh) {
+      if (fs.existsSync(buildPath)) {
+        this.intialized = true;
+        this.build = JSON.parse(fs.readFileSync(buildPath).toString());
+        return;
+      }
+    }
+    const file = await loadYamlFile(DOMAIN_BUILD_LINKS[this.domain]);
+    const parsedBuildYaml = parse(file);
+
+    const dereferencedBuild = await SwaggerParser.dereference(parsedBuildYaml);
+    this.build = dereferencedBuild;
+    saveToLocalFile(JSON.stringify(dereferencedBuild), buildPath);
     this.intialized = true;
   }
 
