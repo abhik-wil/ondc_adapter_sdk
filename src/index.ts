@@ -11,7 +11,7 @@ async function main() {
   const generator = new GenerateType();
   console.log(
     'FLATTENED',
-    generator.flattenNestedObject(initiator.getSchema('Ack'))
+    generator.generateAndExport(initiator, 'Ack', './generated/')
   );
 }
 
