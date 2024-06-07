@@ -7,7 +7,7 @@ import {
 import path from 'path';
 import fs from 'fs';
 import {parse} from 'yaml';
-import SwaggerParser from '@apidevtools/swagger-parser';
+// import SwaggerParser from '@apidevtools/swagger-parser';
 
 export class DomainBuildInitiator {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,24 +29,18 @@ export class DomainBuildInitiator {
     const file = await loadYamlFile(DOMAIN_BUILD_LINKS[this.domain]);
     const parsedBuildYaml = parse(file);
 
-    const dereferencedBuild = await SwaggerParser.dereference(parsedBuildYaml);
-    this.build = dereferencedBuild;
-    saveToLocalFile(JSON.stringify(dereferencedBuild), buildPath);
+    this.build = parsedBuildYaml;
+    // const dereferencedBuild = await SwaggerParser.dereference(parsedBuildYaml);
+    // this.build = dereferencedBuild;
+    saveToLocalFile(JSON.stringify(this.build), buildPath);
     this.intialized = true;
   }
 
-  getTags() {
+  isInitialized() {
     if (!this.intialized) throw new Error('Build not initialized');
-    return this.build['x-tags'];
   }
 
-  getAttributes() {
-    if (!this.intialized) throw new Error('Build not initialized');
-    return this.build['x-attributes'];
-  }
-
-  getSchema(schema: string) {
-    if (!this.intialized) throw new Error('Build not initialized');
-    return this.build['components']['schemas'][schema];
+  getBuild() {
+    return this.build;
   }
 }
