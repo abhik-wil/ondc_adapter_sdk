@@ -14,7 +14,7 @@ export class DomainBuildInitiator {
   private build: any;
   private intialized = false;
   constructor(private domain: DOMAIN_CODE) {}
-  public async init(refresh = false) {
+  public async init(refresh = false): Promise<boolean> {
     const buildPath = path.resolve(
       './src/domain-builds',
       `${this.domain.replace(':', '_')}.json`
@@ -23,7 +23,7 @@ export class DomainBuildInitiator {
       if (fs.existsSync(buildPath)) {
         this.intialized = true;
         this.build = JSON.parse(fs.readFileSync(buildPath).toString());
-        return;
+        return true;
       }
     }
     const file = await loadYamlFile(DOMAIN_BUILD_LINKS[this.domain]);
@@ -34,6 +34,7 @@ export class DomainBuildInitiator {
     // this.build = dereferencedBuild;
     saveToLocalFile(JSON.stringify(this.build), buildPath);
     this.intialized = true;
+    return true;
   }
 
   isInitialized() {
