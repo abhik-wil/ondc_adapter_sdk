@@ -1,4 +1,4 @@
-import fs, {mkdirSync} from 'fs';
+import fs from 'fs';
 import path from 'path';
 
 export class TagWriter {
@@ -9,11 +9,11 @@ export class TagWriter {
   mainBody: string;
 
   constructor(schemaName: string) {
-    this.schemaName = this.processSchemaName(schemaName);
+    this.schemaName = TagWriter.processSchemaName(schemaName);
     this.mainBody = `export type ${this.schemaName} = {\n`;
     this._indentSpacing += 1;
   }
-  private processSchemaName(name: string) {
+  static processSchemaName(name: string) {
     return name
       .split(/[._]/g)
       .map(e => e.charAt(0).toUpperCase() + e.slice(1).toLowerCase())
@@ -66,7 +66,7 @@ export class TagWriter {
         // throw Error(`Location does not exist: ${location}`);
       }
       const data = this.importSection + '\n' + this.mainBody;
-      fs.writeFileSync(path.join(location, `${this.schemaName}.d.ts`), data);
+      fs.writeFileSync(path.join(location, `${this.schemaName}.gen.ts`), data);
       return true;
     } catch (error) {
       console.log('ERROR:', error);

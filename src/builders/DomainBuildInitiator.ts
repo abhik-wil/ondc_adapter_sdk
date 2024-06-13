@@ -13,7 +13,7 @@ export class DomainBuildInitiator {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private build: any;
   private intialized = false;
-  constructor(private domain: DOMAIN_CODE) {}
+  constructor(public domain: DOMAIN_CODE) {}
   public async init(refresh = false): Promise<boolean> {
     const buildPath = path.resolve(
       './src/domain-builds',

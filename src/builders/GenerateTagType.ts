@@ -1,5 +1,7 @@
 import {SchemaFetcher} from './SchemaFetcher';
 import {TagWriter} from './TagWriter';
+import fs from 'fs';
+import path from 'path';
 
 type FlattenedObject = Record<string, string>;
 export class GenerateTagType {
@@ -12,6 +14,22 @@ export class GenerateTagType {
       writer.closeWriter();
       writer.dumpToFile(location);
     }
+    let barrelExport = '';
+    Object.keys(flattened).forEach(
+      k =>
+        (barrelExport += `export * from './${TagWriter.processSchemaName(
+          k
+        )}.gen';\n`)
+    );
+    fs.writeFileSync(path.join(location, 'index.ts'), barrelExport);
+    fs.appendFileSync(
+      path.join(location, '../', 'index.ts'),
+      "\nexport * from './tags';"
+    );
+    fs.appendFileSync(
+      path.join(location, '../../', 'index.ts'),
+      `\nexport * from './${initiator.domain.replace(':', '_')}';`
+    );
   }
 
   flattenNestedObject(obj: any): FlattenedObject {
