@@ -1,0 +1,22 @@
+{
+  "name": "Sample Descriptor",
+  "code": "1234",
+  "short_desc": "This is a short description.",
+  "long_desc": "This is a longer description of the descriptor that provides more details.",
+  "media": [
+    {
+      "mimetype": "audio/mpeg",
+      "url": "http://example.com/mediafile.mp3",
+      "signature": "abcdef123456",
+      "dsa": "SHA256"
+    }
+  ],
+  "images": [
+    {
+      "url": "http://example.com/image.png",
+      "size_type": "md",
+      "width": "800",
+      "height": "600"
+    }
+  ]
+}

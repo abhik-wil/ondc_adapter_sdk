@@ -1,0 +1,58 @@
+{
+  "descriptorName": "Sample Descriptor",
+  "descriptorCode": "1234",
+  "descriptions": {
+    "short": "This is a short description.",
+    "long": "This is a longer description of the descriptor that provides more details.",
+    "additional": {
+      "link": "http://example.com/additional-info",
+      "type": "text/html"
+    }
+  },
+  "mediaFiles": [
+    {
+      "fileType": {
+        "trial": [
+          {
+            "type": "audio1/mpeg"
+          }
+        ]
+      },
+      "fileLink": "http://example.com/mediafile.mp3",
+      "fileSignature": "abcdef123456",
+      "algorithm": "SHA256"
+    },
+    {
+      "fileType": {
+        "trial": [
+          {
+            "type": "audio1/mpeg"
+          }
+        ]
+      },
+      "fileLink": "http://example.com/mediafile.mp3",
+      "fileSignature": "abcdef123456",
+      "algorithm": "SHA256"
+    },
+    {
+      "fileType": {
+        "trial": [
+          {
+            "type": "audio1/mpeg"
+          }
+        ]
+      },
+      "fileLink": "http://example.com/mediafile.mp3",
+      "fileSignature": "abcdef123456",
+      "algorithm": "SHA256"
+    }
+  ],
+  "imageGallery": [
+    {
+      "imageLink": "http://example.com/image.png",
+      "dimension": "md",
+      "imgWidth": "800",
+      "imgHeight": "600"
+    }
+  ]
+}

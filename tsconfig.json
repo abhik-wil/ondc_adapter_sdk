@@ -4,13 +4,15 @@
     "module": "NodeNext",
     "target": "ES2022",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "rootDir": ".",
     "outDir": "build",
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
-      "@generated/*": ["./src/generated/*"],
+      "@generated/*": ["./src/generated/*"]
     }
   },
-  "include": ["./src/**/*.ts", "./test/**/*.ts"]
+  "include": ["./src/**/*.ts"],
+  "exclude": ["build", "test"]
 }

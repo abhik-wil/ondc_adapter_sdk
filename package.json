@@ -17,7 +17,6 @@
     "fix": "gts fix",
     "prepare": "npm.cmd run compile",
     "pretest": "npm.cmd run compile",
-    "posttest": "npm.cmd run lint",
     "generate": "ts-node -r tsconfig-paths/register ./src/scripts/generate.ts",
     "test": "jest"
   },
