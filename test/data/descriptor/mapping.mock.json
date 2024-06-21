@@ -3,16 +3,20 @@
   "code": "descriptorCode",
   "short_desc": "descriptions.short",
   "long_desc": "descriptions.long",
-  "media[]": {
-    "mimetype": "mediaFiles[].fileType",
-    "url": "mediaFiles[].fileLink",
-    "signature": "mediaFiles[].fileSignature",
-    "dsa": "mediaFiles[].algorithm"
-  },
-  "images[]": {
-    "url": "imageGallery[0].imageLink",
-    "size_type": "imageGallery[0].dimension",
-    "width": "imageGallery[0].imgWidth",
-    "height": "imageGallery[0].imgHeight"
-  }
+  "media": [
+    {
+      "mimetype": "mediaFiles[].fileType",
+      "url": "mediaFiles[].fileLink",
+      "signature": "mediaFiles[].fileSignature",
+      "dsa": "mediaFiles[].algorithm"
+    }
+  ],
+  "images": [
+    {
+      "url": "imageGallery[].imageLink",
+      "size_type": "imageGallery[].dimension",
+      "width": "imageGallery[].imgWidth",
+      "height": "imageGallery[].imgHeight"
+    }
+  ]
 }

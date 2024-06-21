@@ -5,7 +5,19 @@
   "long_desc": "This is a longer description of the descriptor that provides more details.",
   "media": [
     {
-      "mimetype": "audio/mpeg",
+      "mimetype": "audio1/mpeg",
+      "url": "http://example.com/mediafile.mp3",
+      "signature": "abcdef123456",
+      "dsa": "SHA256"
+    },
+    {
+      "mimetype": "audio2/mpeg",
+      "url": "http://example.com/mediafile.mp3",
+      "signature": "abcdef123456",
+      "dsa": "SHA256"
+    },
+    {
+      "mimetype": "audio3/mpeg",
       "url": "http://example.com/mediafile.mp3",
       "signature": "abcdef123456",
       "dsa": "SHA256"

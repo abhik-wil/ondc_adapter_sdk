@@ -11,37 +11,19 @@
   },
   "mediaFiles": [
     {
-      "fileType": {
-        "trial": [
-          {
-            "type": "audio1/mpeg"
-          }
-        ]
-      },
+      "fileType": "audio1/mpeg",
       "fileLink": "http://example.com/mediafile.mp3",
       "fileSignature": "abcdef123456",
       "algorithm": "SHA256"
     },
     {
-      "fileType": {
-        "trial": [
-          {
-            "type": "audio1/mpeg"
-          }
-        ]
-      },
+      "fileType": "audio2/mpeg",
       "fileLink": "http://example.com/mediafile.mp3",
       "fileSignature": "abcdef123456",
       "algorithm": "SHA256"
     },
     {
-      "fileType": {
-        "trial": [
-          {
-            "type": "audio1/mpeg"
-          }
-        ]
-      },
+      "fileType": "audio3/mpeg",
       "fileLink": "http://example.com/mediafile.mp3",
       "fileSignature": "abcdef123456",
       "algorithm": "SHA256"
