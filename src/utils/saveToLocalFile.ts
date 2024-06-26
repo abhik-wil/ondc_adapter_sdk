@@ -5,7 +5,7 @@ export async function saveToLocalFile(
   filename: string
 ): Promise<void> {
   try {
-    await fs.promises.writeFile(filename, content);
+    fs.writeFileSync(filename, content);
     console.log(`File saved to ${filename}`);
   } catch (error) {
     console.error('Error saving the file:', error);

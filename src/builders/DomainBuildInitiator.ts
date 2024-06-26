@@ -14,9 +14,15 @@ export class DomainBuildInitiator {
   private build: any;
   private intialized = false;
   constructor(public domain: DOMAIN_CODE) {}
-  public async init(refresh = false): Promise<boolean> {
+  public async init(
+    location = './src/domain-builds',
+    refresh = false
+  ): Promise<boolean> {
+    if (!fs.existsSync(location)) {
+      fs.mkdirSync(location, {recursive: true});
+    }
     const buildPath = path.resolve(
-      './src/domain-builds',
+      location,
       `${this.domain.replace(':', '_')}.json`
     );
     if (!refresh) {

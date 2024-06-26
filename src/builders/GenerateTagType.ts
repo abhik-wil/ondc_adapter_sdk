@@ -24,11 +24,15 @@ export class GenerateTagType {
     fs.writeFileSync(path.join(location, 'index.ts'), barrelExport);
     fs.appendFileSync(
       path.join(location, '../', 'index.ts'),
-      "\nexport * from './tags';"
+      "export * from './tags';\n"
     );
     fs.appendFileSync(
       path.join(location, '../../', 'index.ts'),
-      `\nexport * from './${initiator.domain.replace(':', '_')}';`
+      `export * from './${initiator.domain.replace(':', '_')}';\n`
+    );
+    fs.appendFileSync(
+      path.join(location, '../../../', 'index.ts'),
+      `export * from './generated/${initiator.domain.replace(':', '_')}';\n`
     );
   }
 
