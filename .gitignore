@@ -2,6 +2,7 @@
 generated
 domain-builds
 build
+authKeys.ts
 
 # Logs
 logs

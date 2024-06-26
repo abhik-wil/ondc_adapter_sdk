@@ -1,8 +1,19 @@
 {
+  "name": "ondc-adapter-sdk",
+  "version": "1.0.0",
+  "author": {
+    "name": "Abhik Banerjee"
+  },
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "contributors": [
+    "Tanya Madaan"
+  ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/lodash": "^4.17.5",
     "@types/node": "20.11.5",
+    "@types/libsodium-wrappers": "^0.7.14",
     "gts": "^5.3.0",
     "jest": "^29.7.0",
     "openapi-typescript-codegen": "^0.29.0",
@@ -24,6 +35,7 @@
     "@apidevtools/swagger-parser": "^10.1.0",
     "@hey-api/openapi-ts": "^0.46.3",
     "axios": "^1.7.2",
+    "libsodium-wrappers": "^0.7.13",
     "lodash": "^4.17.21",
     "yaml": "^2.4.2"
   },
