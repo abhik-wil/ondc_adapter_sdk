@@ -19,12 +19,12 @@ export class BecknContext {
     try {
       // Check if schemaPath is a URI
       // Fetch the URI File.
-      const openApiSpec: any = await loadYamlFile(schemaPath);
+      const openApiSpec: any = await loadYamlFile(schemaPath!);
       this.schemas = openApiSpec.components.schemas;
     } catch (error) {
       try {
         // Try to open it as a file
-        const file = fs.readFileSync(schemaPath, 'utf8');
+        const file = fs.readFileSync(schemaPath!, 'utf8');
         const openApiSpec = YAML.parse(file);
         this.schemas = openApiSpec.components.schemas;
       } catch (error) {
@@ -37,10 +37,10 @@ export class BecknContext {
 
   loadMapping(mappingKey: string) {
     const mappingPath = path.join(
-      this.config.getConfig('mappingPath'),
+      this.config.getConfig('mappingPath')!,
       `${mappingKey}.json`
     );
-    console.log(mappingPath);
+    // console.log(mappingPath);
     if (!fs.existsSync(mappingPath)) {
       throw new Error(`Mapping path not found for key ${mappingKey}`);
     }

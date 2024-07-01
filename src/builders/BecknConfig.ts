@@ -3,7 +3,14 @@ import YAML from 'yaml';
 import path from 'path';
 
 export class BecknConfig {
-  private config: {schemaPath: string; mappingPath: string};
+  private config: {
+    schemaPath: string;
+    mappingPath: string;
+    privateKey?: string;
+    subscriberId?: string;
+    uniqueKey?: string;
+    registryUrl?: string;
+  };
   private domain: string;
 
   constructor(
@@ -27,6 +34,14 @@ export class BecknConfig {
     this.configPath = newPath;
     const file = fs.readFileSync(this.configPath, 'utf8');
     this.config = YAML.parse(file)[this.domain] || {};
+  }
+
+  authParamsSet(): boolean {
+    return !(
+      !this.config.privateKey ||
+      !this.config.subscriberId ||
+      !this.config.uniqueKey
+    );
   }
 
   getConfig(key: keyof typeof this.config) {

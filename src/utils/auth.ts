@@ -61,7 +61,7 @@ const split_auth_header = (auth_header: string) => {
   return parts;
 };
 
-export async function verifyHeader(
+export async function verifyAuthHeader(
   header: string,
   rawBody: string,
   registryUrl: string
