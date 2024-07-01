@@ -1,0 +1,44 @@
+{
+  "id": "12345",
+  "descriptor": {
+    "name": "Example Company",
+    "code": "12345",
+    "short_desc": "Example Company",
+    "long_desc": "Example Company",
+    "media": [
+      {
+        "mimetype": "image/jpeg",
+        "url": "http://example.com/image.jpg",
+        "signature": "abcdef123456",
+        "dsa": "SHA-256"
+      }
+    ]
+  },
+  "ttl": "P1D",
+  "locations": [
+    {
+      "id": "loc123",
+      "gps": "40.712776,-74.005974",
+      "address": "123 Example St",
+      "city": {
+        "code": "NYC",
+        "name": "New York"
+      },
+      "state": {
+        "code": "NY"
+      },
+      "country": {
+        "name": "USA"
+      },
+      "area_code": "10001"
+    }
+  ],
+  "items": [
+    {
+      "id": "item123",
+      "name": "Example Item",
+      "description": "This is an example item",
+      "price": "19.99"
+    }
+  ]
+}

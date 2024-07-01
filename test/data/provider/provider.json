@@ -1,0 +1,44 @@
+{
+  "id": "basicInfo.uuid",
+  "descriptor": {
+    "name": "basicInfo.companyName",
+    "code": "basicInfo.uuid",
+    "short_desc": "basicInfo.companyName",
+    "long_desc": "basicInfo.companyName",
+    "media": [
+      {
+        "mimetype": "mediaFiles[].fileType.trial[].type",
+        "url": "mediaFiles[].fileLink.url[].value",
+        "signature": "mediaFiles[].fileSignature",
+        "dsa": "mediaFiles[].algorithm"
+      }
+    ]
+  },
+  "locations": [
+    {
+      "id": "location.id",
+      "gps": "location.address.gps",
+      "address": "location.address.line1",
+      "city": {
+        "code": "location.address.cityCode",
+        "name": "location.address.city"
+      },
+      "state": {
+        "code": "location.address.state"
+      },
+      "country": {
+        "name": "location.address.country"
+      },
+      "area_code": "location.address.pincode"
+    }
+  ],
+  "ttl": "timeToLive",
+  "items": [
+    {
+      "id": "item_id",
+      "name": "item_name",
+      "description": "item_description",
+      "price": "item_price"
+    }
+  ]
+}

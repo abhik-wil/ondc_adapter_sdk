@@ -1,0 +1,43 @@
+{
+  "basicInfo": {
+    "uuid": "12345",
+    "companyName": "Example Company"
+  },
+  "mediaFiles": [
+    {
+      "fileType": {
+        "trial": [
+          {
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "fileLink": {
+        "url": [{"value": "http://example.com/image.jpg"}]
+      },
+      "fileSignature": "abcdef123456",
+      "algorithm": "SHA-256"
+    }
+  ],
+  "location": {
+    "id": "loc123",
+    "address": {
+      "gps": "40.712776,-74.005974",
+      "line1": "123 Example St",
+      "cityCode": "NYC",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA",
+      "pincode": "10001"
+    }
+  },
+  "timeToLive": "P1D",
+  "itemMapping": [
+    {
+      "item_id": "item123",
+      "item_name": "Example Item",
+      "item_description": "This is an example item",
+      "item_price": "19.99"
+    }
+  ]
+}
