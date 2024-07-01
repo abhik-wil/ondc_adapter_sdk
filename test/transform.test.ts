@@ -1,6 +1,6 @@
 import client from './data/descriptor/client.mock.json';
 import transformed from './data/descriptor/transformed.mock.json';
-import mapping from './data/descriptor/mapping.mock.json';
+import mapping from './data/descriptor/descriptor.json';
 import {transform, Descriptor, Mapping} from '../src';
 
 test('Testing Descriptor Transform through direct assignment', () => {

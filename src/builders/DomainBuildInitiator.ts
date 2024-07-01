@@ -3,7 +3,7 @@ import {
   DOMAIN_CODE,
   loadYamlFile,
   saveToLocalFile,
-} from '@/utils';
+} from '../utils';
 import path from 'path';
 import fs from 'fs';
 import {parse} from 'yaml';

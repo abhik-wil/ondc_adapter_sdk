@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {createSigningString, signMessage, verifyMessage} from './crypto';
-import {SubscriberDetail} from '@/types';
+import {SubscriberDetail} from '../types';
 
 const remove_quotes = (value: string) => {
   if (

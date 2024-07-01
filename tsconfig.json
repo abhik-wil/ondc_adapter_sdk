@@ -8,10 +8,6 @@
     "rootDir": ".",
     "outDir": "./build",
     "baseUrl": "./",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@generated/*": ["./src/generated/*"]
-    }
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["build", "test"]

@@ -1,6 +1,6 @@
-import {DOMAIN_CODE} from '@/utils';
-import {GenerateTagType} from '@/builders';
-import {SchemaFetcher} from '@/builders/SchemaFetcher';
+import {DOMAIN_CODE} from '../utils';
+import {GenerateTagType} from '../builders';
+import {SchemaFetcher} from '../builders/SchemaFetcher';
 // import {GenerateType} from './builders/GenerateType';
 import {execSync} from 'child_process';
 export async function generate(domain: DOMAIN_CODE) {

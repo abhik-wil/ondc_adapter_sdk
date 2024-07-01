@@ -1,4 +1,4 @@
-import {Mapping} from '@/types';
+import {Mapping} from '../types';
 import _ from 'lodash';
 
 export function transform(rawData: any, mapping: Mapping<any>): any {

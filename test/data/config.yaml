@@ -1,0 +1,2 @@
+ret10.ondc: {schemaPath: './test/data/beckn_openapi.yaml', }
+ret11.ondc: {schemaPath: 'beckn_openapi.yaml'}

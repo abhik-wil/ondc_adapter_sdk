@@ -1,4 +1,4 @@
-import {ParsedArgs} from '@/types';
+import {ParsedArgs} from '../types';
 
 export function parseArgs(args: string[]): ParsedArgs {
   const parsedArgs: Record<string, string> = {};
